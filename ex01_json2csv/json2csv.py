@@ -12,24 +12,21 @@ def convert_to_csv(source):
         print("\nReading file : "+source)
         data = pd.read_json(source)
         print("Read successful".center(50, "="))
-
     except:
-        print("Error while reading the input file")
+        print("Error : reading the input file failed")
 
     # File converting section
     try:
-        path = cwd+"python-project\json2csv\jsonAndcsv\data.csv"
-
+        path = cwd+"\ex01_json2csv\jsonAndcsv\data.csv"
         print("\nConverting file...")
         data.to_csv(path)
         print("File succesfully converting in : "+path+"\n")
-
     except:
-        print("Error while converting the data to .csv")
+        print("Error : converting the data to .csv fail")
 
 
 if __name__ == "__main__":
     cwd = os.getcwd()
     print(cwd)
-    json_file = cwd+"python-project\json2csv\jsonAndcsv\data.json"
+    json_file = cwd+"\ex01_json2csv\jsonAndcsv\data.json"
     convert_to_csv(json_file)
