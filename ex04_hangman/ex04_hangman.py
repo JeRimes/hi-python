@@ -30,7 +30,7 @@ def game():
                  "bee", "beef", "befitting", "beg", "beginner", "behave", "behavior", "belief", "believe", "bell"]
     # Select word
     computer_choice = random.choice(list_word)
-    print(computer_choice)
+
     # print number letter
     print("Nombre de lettres : " + str(len(computer_choice)))
     number = len(computer_choice)
@@ -38,6 +38,7 @@ def game():
     while(number != 0):
         if(player_life == 0):
             print("you lose !")
+            print("The word is : " + computer_choice)
             playAgain()
             break
         Players_Character = str(input(
@@ -49,6 +50,7 @@ def game():
                      computer_choice))
         if(number == 0 and player_life > 0):
             print("You win !")
+            print("The word is : " + computer_choice)
             playAgain()
 
 
@@ -60,6 +62,7 @@ def playAgain():
             "Please : [Type y for yes] [Type n for no] :")
     if(play_again == "y"):
         global player_life
+        Letter_Choice.clear()
         player_life = 5
         game()
     else:
